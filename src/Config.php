@@ -33,26 +33,26 @@ class Config extends \PhpCsFixer\Config
                 'array_syntax' => [
                     'syntax' => 'short',
                 ],
+                'blank_line_before_statement' => [
+                    'statements' => [
+                        'declare',
+                    ],
+                ],
                 'list_syntax' => [
                     'syntax' => 'short',
                 ],
                 'concat_space' => [
                     'spacing' => 'one',
                 ],
-                'global_namespace_import' => [
-                    'import_classes' => true,
-                    'import_constants' => true,
-                    'import_functions' => null,
-                ],
-                'blank_line_before_statement' => [
-                    'statements' => [
-                        'declare',
-                    ],
-                ],
                 'general_phpdoc_annotation_remove' => [
                     'annotations' => [
                         'author',
                     ],
+                ],
+                'global_namespace_import' => [
+                    'import_classes' => true,
+                    'import_constants' => true,
+                    'import_functions' => null,
                 ],
                 'ordered_imports' => [
                     'imports_order' => [
