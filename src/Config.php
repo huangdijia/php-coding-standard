@@ -4,8 +4,9 @@ declare(strict_types=1);
 /**
  * This file is part of huangdijia/php-coding-standard.
  *
- * @link    https://github.com/huangdijia/php-coding-standard
- * @contact Deeka Wong <huangdijia@gmail.com>
+ * @link     https://github.com/huangdijia/php-coding-standard
+ * @document https://github.com/huangdijia/php-coding-standard/blob/main/README.md
+ * @contact  Deeka Wong <huangdijia@gmail.com>
  */
 namespace Huangdijia\PhpCsFixer;
 
@@ -119,20 +120,30 @@ class Config extends \PhpCsFixer\Config
         return $this->setRules(array_merge_recursive($this->getRules(), $rules));
     }
 
-    public function setHeaderComment(string $projectName, string $projectLink, array $contacts = []): static
+    public function setHeaderComment(string $projectName, ?string $projectLink = null, ?string $projectDocument = null, array $contacts = []): static
     {
-        foreach ($contacts as $name => &$mail) {
-            $mail = sprintf('@contact %s <%s>', $name, $mail);
+        $headers = [
+            "This file is part of {$projectName}.",
+            '',
+        ];
+        if ($projectLink) {
+            $headers[] = "@link     {$projectLink}";
         }
-
+        if ($projectDocument) {
+            $headers[] = "@document {$projectDocument}";
+        }
+        if ($contacts) {
+            foreach ($contacts as $name => $mail) {
+                if (is_numeric($name)) {
+                    $headers[] = sprintf('@contact  %s', $mail);
+                } else {
+                    $headers[] = sprintf('@contact  %s <%s>', $name, $mail);
+                }
+            }
+        }
         $contacts = implode("\n", $contacts);
         $rules = $this->getRules();
-        $rules['header_comment']['header'] = <<<TEXT
-This file is part of {$projectName}.
-
-@link    {$projectLink}
-{$contacts}
-TEXT;
+        $rules['header_comment']['header'] = implode("\n", $headers);
 
         return $this->setRules($rules);
     }

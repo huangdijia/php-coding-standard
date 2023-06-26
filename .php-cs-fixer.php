@@ -4,8 +4,9 @@ declare(strict_types=1);
 /**
  * This file is part of huangdijia/php-coding-standard.
  *
- * @link    https://github.com/huangdijia/php-coding-standard
- * @contact Deeka Wong <huangdijia@gmail.com>
+ * @link     https://github.com/huangdijia/php-coding-standard
+ * @document https://github.com/huangdijia/php-coding-standard/blob/main/README.md
+ * @contact  Deeka Wong <huangdijia@gmail.com>
  */
 use Huangdijia\PhpCsFixer\Config;
 
@@ -15,6 +16,7 @@ return (new Config())
     ->setHeaderComment(
         projectName: 'huangdijia/php-coding-standard',
         projectLink: 'https://github.com/huangdijia/php-coding-standard',
+        projectDocument: 'https://github.com/huangdijia/php-coding-standard/blob/main/README.md',
         contacts: [
             'Deeka Wong' => 'huangdijia@gmail.com',
         ],
