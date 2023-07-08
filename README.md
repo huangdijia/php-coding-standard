@@ -26,10 +26,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 return (new Config())
     ->setHeaderComment(
-        projectName: 'foo/bar',
-        projectLink: 'https://github.com/foo/bar',
+        projectName: 'vendor/package',
+        projectLink: 'https://github.com/vendor/package',
+        projectDocument: 'https://github.com/vendor/package/blob/main/README.md',
         contacts: [
-            'Foo' => 'foo@bar.com',
+            'Your name' => 'your-mail@gmail.com',
         ],
     )
     ->setFinder(
@@ -43,5 +44,4 @@ return (new Config())
             ])
     )
     ->setUsingCache(false);
-
 ```
