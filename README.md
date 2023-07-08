@@ -18,7 +18,7 @@ composer require huangdijia/php-coding-standard --dev
 Replace `vendor/huangdijia/.php-cs-fixer.php.stub` with your own `.php-cs-fixer.php` file.
 
 ```shell
-cp vendor/huangdijia/.php-cs-fixer.php.stub .php-cs-fixer.php
+cp vendor/huangdijia/php-coding-standard/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
 Replace `friendsofphp/php-cs-fixer` with the wrapper provided by this package.
@@ -26,6 +26,8 @@ Replace `friendsofphp/php-cs-fixer` with the wrapper provided by this package.
 ```shell
 composer remove friendsofphp/php-cs-fixer --dev --no-update
 composer require huangdijia/php-coding-standard --dev --no-update
+composer update -o
+cp vendor/huangdijia/php-coding-standard/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
 ## License
