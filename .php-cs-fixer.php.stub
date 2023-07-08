@@ -1,0 +1,26 @@
+<?php
+
+use Huangdijia\PhpCsFixer\Config;
+
+require __DIR__ . '/vendor/autoload.php';
+
+return (new Config())
+    ->setHeaderComment(
+        projectName: 'vendor/package',
+        projectLink: 'https://github.com/vendor/package',
+        projectDocument: 'https://github.com/vendor/package/blob/main/README.md',
+        contacts: [
+            'Your name' => 'your-mail@gmail.com',
+        ],
+    )
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->exclude('public')
+            ->exclude('runtime')
+            ->exclude('vendor')
+            ->in(__DIR__)
+            ->append([
+                __FILE__,
+            ])
+    )
+    ->setUsingCache(false);

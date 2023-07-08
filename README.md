@@ -14,7 +14,7 @@ composer require huangdijia/php-coding-standard --dev
 ```
 
 ```shell
-touch .php-cs-fixer.php
+cp vendor/huangdijia/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
 ```php

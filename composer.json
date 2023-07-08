@@ -1,6 +1,6 @@
 {
     "name": "huangdijia/php-coding-standard",
-    "description": "Standards for Personal Use.",
+    "description": "PHP Coding Standards for Personal Use.",
     "keywords": [
         "php",
         "php-cs-fixer",
