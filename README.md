@@ -9,39 +9,25 @@ Standards for Personal Use.
 
 ## Usage
 
+Install via composer.
+
 ```shell
 composer require huangdijia/php-coding-standard --dev
 ```
+
+Replace `vendor/huangdijia/.php-cs-fixer.php.stub` with your own `.php-cs-fixer.php` file.
 
 ```shell
 cp vendor/huangdijia/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
-```php
-<?php
+Replace `friendsofphp/php-cs-fixer` with the wrapper provided by this package.
 
-use Huangdijia\PhpCsFixer\Config;
-
-require __DIR__ . '/vendor/autoload.php';
-
-return (new Config())
-    ->setHeaderComment(
-        projectName: 'vendor/package',
-        projectLink: 'https://github.com/vendor/package',
-        projectDocument: 'https://github.com/vendor/package/blob/main/README.md',
-        contacts: [
-            'Your name' => 'your-mail@gmail.com',
-        ],
-    )
-    ->setFinder(
-        PhpCsFixer\Finder::create()
-            ->exclude('public')
-            ->exclude('runtime')
-            ->exclude('vendor')
-            ->in(__DIR__)
-            ->append([
-                __FILE__,
-            ])
-    )
-    ->setUsingCache(false);
+```shell
+composer remove friendsofphp/php-cs-fixer --dev --no-update
+composer require huangdijia/php-coding-standard --dev --no-update
 ```
+
+## License
+
+MIT
