@@ -114,7 +114,9 @@ class Config extends \PhpCsFixer\Config
         return $this->setRules($rules);
     }
 
-    /** @param array<string, mixed> $rules */
+    /**
+     * @param array<string, mixed> $rules
+     */
     public function addRules(array $rules): ConfigInterface
     {
         return $this->setRules(array_merge_recursive($this->getRules(), $rules));
@@ -133,13 +135,10 @@ class Config extends \PhpCsFixer\Config
             $headers[] = "@document {$projectDocument}";
         }
         if ($contacts) {
-            foreach ($contacts as $name => $mail) {
-                if (is_numeric($name)) {
-                    $headers[] = sprintf('@contact  %s', $mail);
-                } else {
-                    $headers[] = sprintf('@contact  %s <%s>', $name, $mail);
-                }
-            }
+            $isList = array_is_list($contacts);
+            array_walk($contacts, function ($email, $name) use ($isList, &$headers) {
+                $headers[] = $isList ? sprintf('@contact  %s', $email) : sprintf('@contact  %s <%s>', $name, $email);
+            });
         }
         $contacts = implode("\n", $contacts);
         $rules = $this->getRules();
