@@ -12,6 +12,7 @@ namespace Huangdijia\PhpCsFixer;
 
 use PhpCsFixer\ConfigInterface;
 
+use function array_is_list;
 use function array_merge_recursive;
 
 class Config extends \PhpCsFixer\Config
