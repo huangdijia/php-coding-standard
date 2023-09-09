@@ -8,6 +8,7 @@ declare(strict_types=1);
  * @document https://github.com/huangdijia/php-coding-standard/blob/main/README.md
  * @contact  Deeka Wong <huangdijia@gmail.com>
  */
+
 namespace Huangdijia\PhpCsFixer;
 
 use PhpCsFixer\ConfigInterface;
@@ -105,6 +106,7 @@ class Config extends \PhpCsFixer\Config
                     'null_adjustment' => 'always_last',
                     'sort_algorithm' => 'none',
                 ],
+                'single_line_empty_body' => false,
             ]);
     }
 
