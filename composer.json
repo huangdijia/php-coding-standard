@@ -6,8 +6,7 @@
         "php-cs-fixer",
         "code-style",
         "code-format",
-        "config",
-        "standard"
+        "code-standard"
     ],
     "license": "MIT",
     "authors": [
@@ -17,20 +16,17 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
-        "friendsofphp/php-cs-fixer": "^3.17.0"
+        "php": ">=8.1",
+        "friendsofphp/php-cs-fixer": "^3.38.0"
     },
     "autoload": {
-        "files": [
-            "src/Functions.php"
-        ],
         "psr-4": {
             "Huangdijia\\PhpCsFixer\\": "src/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "1.2.x-dev"
+            "dev-main": "2.x-dev"
         }
     },
     "scripts": {
