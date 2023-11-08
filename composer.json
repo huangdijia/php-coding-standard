@@ -6,8 +6,7 @@
         "php-cs-fixer",
         "code-style",
         "code-format",
-        "config",
-        "standard"
+        "code-standard"
     ],
     "license": "MIT",
     "authors": [
@@ -18,7 +17,7 @@
     ],
     "require": {
         "php": ">=8.0",
-        "friendsofphp/php-cs-fixer": "^3.17.0"
+        "friendsofphp/php-cs-fixer": "^3.38.0"
     },
     "autoload": {
         "files": [
