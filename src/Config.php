@@ -109,6 +109,7 @@ class Config extends \PhpCsFixer\Config
                 'single_line_empty_body' => false,
                 'fully_qualified_strict_types' => [
                     'import_symbols' => false,
+                    'phpdoc_tags' => [],
                 ],
             ]);
     }
