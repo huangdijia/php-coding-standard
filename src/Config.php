@@ -107,6 +107,9 @@ class Config extends \PhpCsFixer\Config
                     'sort_algorithm' => 'none',
                 ],
                 'single_line_empty_body' => false,
+                'fully_qualified_strict_types' => [
+                    'import_symbols' => false,
+                ],
             ]);
     }
 
