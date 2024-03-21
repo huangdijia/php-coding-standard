@@ -111,6 +111,7 @@ class Config extends \PhpCsFixer\Config
                     'import_symbols' => false,
                     'phpdoc_tags' => [],
                 ],
+                'nullable_type_declaration_for_default_null_value' => false,
             ]);
     }
 
