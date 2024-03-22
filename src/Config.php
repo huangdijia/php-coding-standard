@@ -111,7 +111,7 @@ class Config extends \PhpCsFixer\Config
                     'import_symbols' => false,
                     'phpdoc_tags' => [],
                 ],
-                'nullable_type_declaration_for_default_null_value' => false,
+                'nullable_type_declaration_for_default_null_value' => true, // Since PHP 8.3, default null values can be declared as nullable.
             ]);
     }
 
