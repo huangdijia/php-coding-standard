@@ -9,10 +9,12 @@ declare(strict_types=1);
  * @contact  Deeka Wong <huangdijia@gmail.com>
  */
 use Huangdijia\PhpCsFixer\Config;
+use PhpCsFixer\Runner\Parallel\ParallelConfig;
 
 require __DIR__ . '/vendor/autoload.php';
 
 return (new Config())
+    ->setParallelConfig(new ParallelConfig(4, 20))
     ->setHeaderComment(
         projectName: 'huangdijia/php-coding-standard',
         projectLink: 'https://github.com/huangdijia/php-coding-standard',

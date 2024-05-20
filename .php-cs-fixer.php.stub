@@ -1,10 +1,12 @@
 <?php
 
 use Huangdijia\PhpCsFixer\Config;
+use PhpCsFixer\Runner\Parallel\ParallelConfig;
 
 require __DIR__ . '/vendor/autoload.php';
 
 return (new Config())
+    ->setParallelConfig(new ParallelConfig(4, 20))
     ->setHeaderComment(
         projectName: 'vendor/package',
         projectLink: 'https://github.com/vendor/package',
