@@ -36,12 +36,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Release ${{ inputs.version }}
+      - name: Release
         uses: softprops/action-gh-release@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
-          name: Release ${{ inputs.version }}
+          name: Release ${{ github.ref }}
           draft: false
           prerelease: false
           generate_release_notes: true
