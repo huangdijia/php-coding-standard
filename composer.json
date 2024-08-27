@@ -1,6 +1,7 @@
 {
     "name": "huangdijia/php-coding-standard",
     "description": "PHP Coding Standards for Personal Use.",
+    "license": "MIT",
     "keywords": [
         "php",
         "php-cs-fixer",
@@ -9,7 +10,6 @@
         "config",
         "standard"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Deeka Wong",
@@ -18,17 +18,24 @@
     ],
     "require": {
         "php": ">=8.0",
-        "friendsofphp/php-cs-fixer": "^3.45.0, !=3.63.0, !=3.63.1"
+        "ergebnis/composer-normalize": "^2.43",
+        "friendsofphp/php-cs-fixer": "^3.45.0 !=3.63.0 !=3.63.1"
     },
     "autoload": {
-        "files": [
-            "src/Functions.php"
-        ],
         "psr-4": {
             "Huangdijia\\PhpCsFixer\\": "src/"
+        },
+        "files": [
+            "src/Functions.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
         }
     },
     "scripts": {
-        "cs-fix": "php-cs-fixer fix $1"
+        "cs-fix": "vendor/bin/php-cs-fixer fix $1",
+        "json-fix": "@composer normalize --no-update-lock"
     }
 }
