@@ -99,11 +99,11 @@ class Config extends \PhpCsFixer\Config
                 'php_unit_test_class_requires_covers' => true,
                 'php_unit_internal_class' => true,
                 'ordered_types' => [
-                    'null_adjustment' => 'always_last',
+                    'null_adjustment' => 'always_first',
                     'sort_algorithm' => 'none',
                 ],
                 'phpdoc_types_order' => [
-                    'null_adjustment' => 'always_last',
+                    'null_adjustment' => 'always_first',
                     'sort_algorithm' => 'none',
                 ],
                 'single_line_empty_body' => false,
