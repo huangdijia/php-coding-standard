@@ -12,7 +12,7 @@ Always reference these instructions first and fallback to search or bash command
 
 ### Bootstrap and Dependencies
 - Install dependencies: `composer install --no-interaction`
-  - Takes approximately 40 seconds. NEVER CANCEL. Set timeout to 90+ seconds.
+  - Takes approximately ~38 seconds. NEVER CANCEL. Set timeout to 90+ seconds.
   - May show GitHub authentication warnings but will complete successfully using fallback methods.
   - Creates vendor/ directory and composer.lock file.
 
