@@ -1,41 +1,41 @@
-# Changelog
+# 更新日志
 
-All notable changes to this project will be documented in this file.
+项目的所有重要更改都将记录在此文件中。
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+格式基于 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
+本项目遵循 [语义化版本控制](https://semver.org/spec/v2.0.0.html)。
 
-## [Unreleased]
+## [未发布]
 
-### Added
-- Comprehensive documentation with usage examples
-- CI/CD pipeline for automated testing and quality checks
-- Security policy and vulnerability reporting guidelines
-- Enhanced VSCode configuration with better PHP support
-- Type hints and PHPDoc improvements
+### 新增
+- 包含使用示例的全面文档
+- 用于自动化测试和质量检查的 CI/CD 流水线
+- 安全策略和漏洞报告指南
+- 增强的 VSCode 配置，更好地支持 PHP
+- 类型提示和 PHPDoc 改进
 
-### Changed
-- Updated PHP version requirement documentation
-- Improved GitHub Actions workflows with security checks
-- Enhanced README with detailed configuration examples
+### 更改
+- 更新了 PHP 版本要求文档
+- 改进了包含安全检查的 GitHub Actions 工作流
+- 增强了 README，包含详细的配置示例
 
-### Fixed
-- Removed unused variable assignment in `setHeaderComment` method
-- Fixed VSCode PHP version configuration to match project requirements
-- Corrected deprecated GitHub Actions syntax in release workflow
+### 修复
+- 移除了 `setHeaderComment` 方法中未使用的变量赋值
+- 修复了 VSCode PHP 版本配置以匹配项目要求
+- 修正了发布工作流中已弃用的 GitHub Actions 语法
 
-### Security
-- Added automated security vulnerability scanning
-- Improved VSCode configuration security settings
+### 安全
+- 添加了自动化安全漏洞扫描
+- 改进了 VSCode 配置安全设置
 
 ## [2.0.0] - 2023-XX-XX
 
-### Added
-- Initial stable release
-- PHP CS Fixer configuration wrapper
-- Support for PHP 8.1+
-- Header comment automation
-- Parallel processing support
+### 新增
+- 初始稳定版本发布
+- PHP CS Fixer 配置包装器
+- 支持 PHP 8.1+
+- 头部注释自动化
+- 并行处理支持
 
-### Security
-- Initial security policy implementation
+### 安全
+- 初始安全策略实现

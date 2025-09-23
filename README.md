@@ -1,4 +1,4 @@
-# PHP Coding Standard
+# PHP 代码规范
 
 [![Latest Stable Version](https://poser.pugx.org/huangdijia/php-coding-standard/v)](//packagist.org/packages/huangdijia/php-coding-standard)
 [![Total Downloads](https://poser.pugx.org/huangdijia/php-coding-standard/downloads)](//packagist.org/packages/huangdijia/php-coding-standard)
@@ -6,41 +6,41 @@
 [![PHP Version Require](https://poser.pugx.org/huangdijia/php-coding-standard/require/php)](//packagist.org/packages/huangdijia/php-coding-standard)
 [![CI](https://github.com/huangdijia/php-coding-standard/workflows/CI/badge.svg)](https://github.com/huangdijia/php-coding-standard/actions)
 
-A comprehensive PHP coding standard configuration based on PHP CS Fixer for personal and team use.
+基于 PHP CS Fixer 的全面 PHP 代码规范配置，适用于个人和团队使用。
 
-## Features
+## 特性
 
-- 🚀 Based on industry-standard rulesets (PSR-2, Symfony, PhpCsFixer)
-- 🎯 Optimized for modern PHP 8.1+ development
-- 🔧 Easily customizable with additional rules
-- 📝 Automatic header comment generation
-- ⚡ Parallel processing support for faster execution
-- 🎨 Pre-configured VSCode integration
+- 🚀 基于行业标准规则集（PSR-2、Symfony、PhpCsFixer）
+- 🎯 针对现代 PHP 8.1+ 开发进行优化
+- 🔧 轻松使用附加规则进行自定义
+- 📝 自动头部注释生成
+- ⚡ 支持并行处理，执行更快
+- 🎨 预配置的 VSCode 集成
 
-## Requirements
+## 系统要求
 
-- PHP 8.1 or higher
+- PHP 8.1 或更高版本
 - Composer
 
-## Installation
+## 安装
 
-Install via composer as a development dependency:
+通过 composer 安装为开发依赖：
 
 ```bash
 composer require huangdijia/php-coding-standard --dev
 ```
 
-## Quick Start
+## 快速开始
 
-### Option 1: Use the provided stub file
+### 选项 1：使用提供的模板文件
 
-Copy the configuration stub to your project root:
+将配置模板复制到项目根目录：
 
 ```bash
 cp vendor/huangdijia/php-coding-standard/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
-Edit the copied `.php-cs-fixer.php` file to match your project details:
+编辑复制的 `.php-cs-fixer.php` 文件以匹配您的项目详情：
 
 ```php
 <?php
@@ -73,9 +73,9 @@ return (new Config())
     ->setUsingCache(false);
 ```
 
-### Option 2: Replace existing php-cs-fixer
+### 选项 2：替换现有的 php-cs-fixer
 
-If you already have `friendsofphp/php-cs-fixer` in your project:
+如果您的项目中已经有 `friendsofphp/php-cs-fixer`：
 
 ```bash
 composer remove friendsofphp/php-cs-fixer --dev --no-update
@@ -84,34 +84,34 @@ composer update -o
 cp vendor/huangdijia/php-coding-standard/.php-cs-fixer.php.stub .php-cs-fixer.php
 ```
 
-## Usage
+## 使用方法
 
-### Basic Commands
+### 基本命令
 
-Fix code style issues:
+修复代码风格问题：
 
 ```bash
 vendor/bin/php-cs-fixer fix
 ```
 
-Dry run (preview changes without applying):
+试运行（预览更改而不应用）：
 
 ```bash
 vendor/bin/php-cs-fixer fix --dry-run --diff
 ```
 
-If you have the composer script configured:
+如果您配置了 composer 脚本：
 
 ```bash
 composer cs-fix
 composer cs-fix -- --dry-run --diff
 ```
 
-### Advanced Configuration
+## 高级配置
 
-#### Custom Rules
+### 自定义规则
 
-You can add or override rules using the fluent API:
+您可以使用流式 API 添加或覆盖规则：
 
 ```php
 return (new Config())
@@ -124,18 +124,18 @@ return (new Config())
     ->setFinder(/* ... */);
 ```
 
-#### Available Methods
+### 可用方法
 
-- `setRule(string $rule, mixed $value)`: Set a single rule
-- `addRules(array $rules)`: Add multiple rules (merges with existing)
-- `setHeaderComment(...)`: Configure automatic header comments
+- `setRule(string $rule, mixed $value)`：设置单个规则
+- `addRules(array $rules)`：添加多个规则（与现有规则合并）
+- `setHeaderComment(...)`：配置自动头部注释
 
-#### Header Comment Configuration
+### 头部注释配置
 
-The `setHeaderComment` method supports flexible contact formats:
+`setHeaderComment` 方法支持灵活的联系人格式：
 
 ```php
-// Array with name => email pairs
+// 使用名称 => 邮箱的数组
 ->setHeaderComment(
     projectName: 'my-project',
     contacts: [
@@ -144,16 +144,16 @@ The `setHeaderComment` method supports flexible contact formats:
     ]
 )
 
-// Simple array of email addresses
+// 使用邮箱地址的简单数组
 ->setHeaderComment(
     projectName: 'my-project', 
     contacts: ['john@example.com', 'jane@example.com']
 )
 ```
 
-#### Excluding Directories
+### 排除目录
 
-Customize which directories to scan:
+自定义要扫描的目录：
 
 ```php
 ->setFinder(
@@ -168,11 +168,11 @@ Customize which directories to scan:
 )
 ```
 
-## Integration
+## 集成
 
 ### VSCode
 
-The package includes optimized VSCode settings. Copy the configuration:
+该包包含优化的 VSCode 设置。复制配置：
 
 ```bash
 mkdir -p .vscode
@@ -181,7 +181,7 @@ cp vendor/huangdijia/php-coding-standard/.vscode/* .vscode/
 
 ### CI/CD
 
-Example GitHub Actions workflow:
+GitHub Actions 工作流示例：
 
 ```yaml
 name: Code Style
@@ -200,56 +200,56 @@ jobs:
       - run: vendor/bin/php-cs-fixer fix --dry-run --diff
 ```
 
-### Pre-commit Hook
+### 预提交钩子
 
-Add to `.git/hooks/pre-commit`:
+添加到 `.git/hooks/pre-commit`：
 
 ```bash
 #!/bin/sh
 vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format=udiff
 ```
 
-## Included Rules
+## 包含的规则
 
-This configuration includes:
+此配置包含：
 
-- **PSR-2**: Basic coding standards
-- **Symfony**: Symfony coding standards
-- **PhpCsFixer**: Additional modern PHP best practices
-- **DoctrineAnnotation**: Doctrine annotation formatting
-- **Custom optimizations**: Performance and readability improvements
+- **PSR-2**：基本编码标准
+- **Symfony**：Symfony 编码标准
+- **PhpCsFixer**：额外的现代 PHP 最佳实践
+- **DoctrineAnnotation**：Doctrine 注释格式化
+- **自定义优化**：性能和可读性改进
 
-Key customizations:
-- Short array syntax (`[]` instead of `array()`)
-- Single quotes for strings
-- Optimized import ordering
-- Proper PHPDoc formatting
-- Strict type declarations
-- Modern PHP 8.1+ features
+主要自定义：
+- 短数组语法（`[]` 而不是 `array()`）
+- 字符串使用单引号
+- 优化的导入排序
+- 适当的 PHPDoc 格式化
+- 严格类型声明
+- 现代 PHP 8.1+ 特性
 
-## Contributing
+## 贡献
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+1. Fork 仓库
+2. 创建您的功能分支
+3. 提交您的更改
+4. 推送到分支
+5. 创建 Pull Request
 
-Please ensure all code follows the established coding standards by running:
+请确保所有代码都遵循既定的编码标准，运行：
 
 ```bash
 composer cs-fix
 composer json-fix
 ```
 
-## Security
+## 安全
 
-If you discover any security vulnerabilities, please email [huangdijia@gmail.com](mailto:huangdijia@gmail.com) instead of using the issue tracker.
+如果您发现任何安全漏洞，请发送邮件到 [huangdijia@gmail.com](mailto:huangdijia@gmail.com)，而不要使用问题跟踪器。
 
-## Changelog
+## 更新日志
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+请参阅 [CHANGELOG](CHANGELOG.md) 了解最近的更改信息。
 
-## License
+## 许可证
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+MIT 许可证。请参阅 [License File](LICENSE) 了解更多信息。

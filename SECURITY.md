@@ -1,40 +1,40 @@
-# Security Policy
+# 安全策略
 
-## Supported Versions
+## 支持的版本
 
-| Version | Supported          |
+| 版本    | 是否支持           |
 | ------- | ------------------ |
 | 2.x     | :white_check_mark: |
 | 1.x     | :x:                |
 
-## Reporting a Vulnerability
+## 报告漏洞
 
-If you discover a security vulnerability within this package, please send an email to Deeka Wong at [huangdijia@gmail.com](mailto:huangdijia@gmail.com).
+如果您在此包中发现安全漏洞，请发送电子邮件至 Deeka Wong：[huangdijia@gmail.com](mailto:huangdijia@gmail.com)。
 
-All security vulnerabilities will be promptly addressed. Please do not disclose security-related issues publicly until they have been handled by the maintainers.
+所有安全漏洞都将得到及时处理。在维护者处理之前，请不要公开披露与安全相关的问题。
 
-### What to include
+### 需要包含的信息
 
-When reporting a vulnerability, please include:
+报告漏洞时，请包含：
 
-- A description of the vulnerability
-- Steps to reproduce the issue
-- Affected versions
-- Any potential impact
-- Suggested fix (if known)
+- 漏洞描述
+- 重现问题的步骤
+- 受影响的版本
+- 任何潜在影响
+- 建议的修复方案（如果已知）
 
-### Response Timeline
+### 响应时间
 
-- **Initial Response**: Within 48 hours
-- **Status Update**: Within 7 days
-- **Resolution**: Varies depending on complexity
+- **初始响应**：48 小时内
+- **状态更新**：7 天内
+- **解决方案**：根据复杂性而定
 
-## Security Best Practices
+## 安全最佳实践
 
-When using this package:
+使用此包时：
 
-1. Always use the latest stable version
-2. Keep your dependencies up to date
-3. Review configuration files before using them in production
-4. Use proper file permissions for configuration files
-5. Avoid exposing sensitive information in code style configurations
+1. 始终使用最新的稳定版本
+2. 保持依赖项更新
+3. 在生产环境中使用配置文件前请先审查
+4. 为配置文件使用适当的文件权限
+5. 避免在代码风格配置中暴露敏感信息
