@@ -39,8 +39,11 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Check PHP syntax
-        run: find src -name "*.php" -exec php -l {} \;
+      - name: Install PHPStan
+        run: composer global require phpstan/phpstan
+
+      - name: Run PHPStan analysis
+        run: ~/.composer/vendor/bin/phpstan analyse src --level=8 --no-progress
 
       - name: Run PHP CS Fixer (dry run)
         run: vendor/bin/php-cs-fixer fix --dry-run --diff --verbose
