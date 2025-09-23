@@ -22,11 +22,16 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^1.12",
-        "phpunit/phpunit": "^10.4"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
             "Huangdijia\\PhpCsFixer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Huangdijia\\PhpCsFixer\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -52,6 +57,7 @@
             "@json-fix"
         ],
         "json-check": "@composer normalize --dry-run --no-update-lock",
-        "json-fix": "@composer normalize --no-update-lock"
+        "json-fix": "@composer normalize --no-update-lock",
+        "test": "@php vendor/bin/phpunit"
     }
 }
