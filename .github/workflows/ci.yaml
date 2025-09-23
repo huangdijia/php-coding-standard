@@ -45,11 +45,11 @@ jobs:
       - name: Run PHP CS Fixer (dry run)
         run: composer cs-check
 
-      - name: Run unit tests
-        run: composer test
-
       - name: Normalize composer.json
         run: composer json-fix --dry-run
+
+      - name: Run unit tests
+        run: composer test
 
   security:
     runs-on: ubuntu-latest
