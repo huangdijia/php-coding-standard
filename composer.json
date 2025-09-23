@@ -37,6 +37,16 @@
     },
     "scripts": {
         "cs-fix": "vendor/bin/php-cs-fixer fix $1",
-        "json-fix": "@composer normalize --no-update-lock"
+        "cs-check": "vendor/bin/php-cs-fixer fix --dry-run --diff $1",
+        "json-fix": "@composer normalize --no-update-lock",
+        "json-check": "@composer normalize --dry-run --no-update-lock",
+        "check-all": [
+            "@cs-check",
+            "@json-check"
+        ],
+        "fix-all": [
+            "@cs-fix",
+            "@json-fix"
+        ]
     }
 }
