@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Huangdijia\PhpCsFixer;
 
 use function array_is_list;
-use function array_merge_recursive;
 
 class Config extends \PhpCsFixer\Config
 {
@@ -38,7 +37,7 @@ class Config extends \PhpCsFixer\Config
      */
     public function addRules(array $rules): static
     {
-        $this->setRules(array_merge_recursive($this->getRules(), $rules));
+        $this->setRules(array_merge($this->getRules(), $rules));
 
         return $this;
     }
