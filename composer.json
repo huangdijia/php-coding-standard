@@ -20,6 +20,10 @@
         "ergebnis/composer-normalize": "^2.43",
         "friendsofphp/php-cs-fixer": "^3.64.0"
     },
+    "require-dev": {
+        "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^10.4"
+    },
     "autoload": {
         "psr-4": {
             "Huangdijia\\PhpCsFixer\\": "src/"
@@ -36,17 +40,18 @@
         }
     },
     "scripts": {
-        "cs-fix": "vendor/bin/php-cs-fixer fix $1",
-        "cs-check": "vendor/bin/php-cs-fixer fix --dry-run --diff $1",
-        "json-fix": "@composer normalize --no-update-lock",
-        "json-check": "@composer normalize --dry-run --no-update-lock",
+        "analyze": "@php vendor/bin/phpstan analyse --memory-limit=-1",
         "check-all": [
             "@cs-check",
             "@json-check"
         ],
+        "cs-check": "@php vendor/bin/php-cs-fixer fix --dry-run --diff $1",
+        "cs-fix": "@php vendor/bin/php-cs-fixer fix $1",
         "fix-all": [
             "@cs-fix",
             "@json-fix"
-        ]
+        ],
+        "json-check": "@composer normalize --dry-run --no-update-lock",
+        "json-fix": "@composer normalize --no-update-lock"
     }
 }

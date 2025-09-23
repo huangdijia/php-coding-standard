@@ -26,19 +26,23 @@ class Config extends \PhpCsFixer\Config
             ->setRules($this->getDefaultRules());
     }
 
-    public function setRule(string $rule, mixed $value): ConfigInterface
+    public function setRule(string $rule, mixed $value): static
     {
         $rules = $this->getRules();
         $rules[$rule] = $value;
-        return $this->setRules($rules);
+        $this->setRules($rules);
+
+        return $this;
     }
 
     /**
      * @param array<string, mixed> $rules
      */
-    public function addRules(array $rules): ConfigInterface
+    public function addRules(array $rules): static
     {
-        return $this->setRules(array_merge_recursive($this->getRules(), $rules));
+        $this->setRules(array_merge_recursive($this->getRules(), $rules));
+
+        return $this;
     }
 
     /**
@@ -46,7 +50,9 @@ class Config extends \PhpCsFixer\Config
      */
     public function enableCache(string $cacheFile = '.php-cs-fixer.cache'): static
     {
-        return $this->setUsingCache(true)->setCacheFile($cacheFile);
+        $this->setUsingCache(true)->setCacheFile($cacheFile);
+
+        return $this;
     }
 
     /**
@@ -63,7 +69,9 @@ class Config extends \PhpCsFixer\Config
             $rules['nullable_type_declaration_for_default_null_value']
         );
 
-        return $this->setRiskyAllowed(false)->setRules($rules);
+        $this->setRiskyAllowed(false)->setRules($rules);
+
+        return $this;
     }
 
     /**
@@ -71,13 +79,15 @@ class Config extends \PhpCsFixer\Config
      */
     public function forLaravel(): static
     {
-        return $this->addRules([
+        $this->addRules([
             'not_operator_with_successor_space' => false, // Laravel prefers !$var
             'php_unit_test_class_requires_covers' => false, // Laravel tests don't require @covers
             'single_line_comment_style' => [
                 'comment_types' => ['hash'], // Allow # comments in Laravel
             ],
         ]);
+
+        return $this;
     }
 
     /**
@@ -104,7 +114,9 @@ class Config extends \PhpCsFixer\Config
         $rules = $this->getRules();
         $rules['header_comment']['header'] = implode("\n", $headers);
 
-        return $this->setRules($rules);
+        $this->setRules($rules);
+
+        return $this;
     }
 
     /**

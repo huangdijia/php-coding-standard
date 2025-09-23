@@ -39,24 +39,11 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Install PHPStan
-        run: composer global require phpstan/phpstan
-
       - name: Run PHPStan analysis
-        run: |
-          if [ -f ~/.composer/vendor/bin/phpstan ]; then
-            ~/.composer/vendor/bin/phpstan analyse --configuration=phpstan.neon --no-progress
-          else
-            echo "PHPStan not available, skipping analysis"
-          fi
+        run: composer analyze src
 
       - name: Run PHP CS Fixer (dry run)
-        run: |
-          if [ -f vendor/bin/php-cs-fixer ]; then
-            vendor/bin/php-cs-fixer fix --dry-run --diff --verbose
-          else
-            echo "PHP CS Fixer not available, skipping check"
-          fi
+        run: composer cs-check
 
       - name: Normalize composer.json
         run: composer json-fix --dry-run
