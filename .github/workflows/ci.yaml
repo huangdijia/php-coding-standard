@@ -45,7 +45,7 @@ jobs:
       - name: Run PHPStan analysis
         run: |
           if [ -f ~/.composer/vendor/bin/phpstan ]; then
-            ~/.composer/vendor/bin/phpstan analyse src --level=5 --no-progress
+            ~/.composer/vendor/bin/phpstan analyse --configuration=phpstan.neon --no-progress
           else
             echo "PHPStan not available, skipping analysis"
           fi

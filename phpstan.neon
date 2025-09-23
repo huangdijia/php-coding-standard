@@ -1,0 +1,26 @@
+parameters:
+    level: 5
+    paths:
+        - src
+    
+    # Ignore specific patterns that are common in coding standard configurations
+    ignoreErrors:
+        # Allow dynamic rule configuration
+        - '#Call to an undefined method PhpCsFixer\\Config::[a-zA-Z]+\(\)#'
+        
+    # Enable specific features
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    
+    # PHP version compatibility
+    phpVersion: 80100 # PHP 8.1
+    
+    # Cache configuration
+    tmpDir: var/cache/phpstan
+    
+    # Report unmatched ignored errors
+    reportUnmatchedIgnoredErrors: false
+    
+    # Type coverage
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
+    checkMissingOverrideMethodAttribute: false
