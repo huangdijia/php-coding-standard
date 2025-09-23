@@ -170,15 +170,6 @@ return (new Config())
 
 ## 集成
 
-### VSCode
-
-该包包含优化的 VSCode 设置。复制配置：
-
-```bash
-mkdir -p .vscode
-cp vendor/huangdijia/php-coding-standard/.vscode/* .vscode/
-```
-
 ### CI/CD
 
 GitHub Actions 工作流示例：
