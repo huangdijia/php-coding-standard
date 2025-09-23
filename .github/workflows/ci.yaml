@@ -42,11 +42,11 @@ jobs:
       - name: Run PHPStan analysis
         run: composer analyze src
 
-      - name: Run unit tests
-        run: composer test
-
       - name: Run PHP CS Fixer (dry run)
         run: composer cs-check
+
+      - name: Run unit tests
+        run: composer test
 
       - name: Normalize composer.json
         run: composer json-fix --dry-run
