@@ -11,8 +11,6 @@ declare(strict_types=1);
 
 namespace Huangdijia\PhpCsFixer;
 
-use PhpCsFixer\ConfigInterface;
-
 use function array_is_list;
 use function array_merge_recursive;
 
