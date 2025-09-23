@@ -23,7 +23,6 @@ class Config extends \PhpCsFixer\Config
         parent::__construct($name);
         $this->setUsingCache(false)
             ->setRiskyAllowed(true)
-            ->setUnsupportedPhpVersionAllowed(true)
             ->setRules($this->getDefaultRules());
     }
 
