@@ -1,3 +1,6 @@
 vendor
 composer.lock
 .bashrc
+.php-cs-fixer.cache
+examples/.php-cs-fixer.cache
+var/

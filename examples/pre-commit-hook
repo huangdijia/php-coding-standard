@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Pre-commit hook for PHP CS Fixer
+# 
+# To install this hook, copy it to .git/hooks/pre-commit and make it executable:
+# cp examples/pre-commit-hook .git/hooks/pre-commit
+# chmod +x .git/hooks/pre-commit
+#
+
+# Check if php-cs-fixer is available
+if [ ! -f vendor/bin/php-cs-fixer ]; then
+    echo "PHP CS Fixer not found. Please run 'composer install' first."
+    exit 1
+fi
+
+# Check if .php-cs-fixer.php exists
+if [ ! -f .php-cs-fixer.php ]; then
+    echo ".php-cs-fixer.php configuration file not found."
+    echo "Please copy the configuration from the package:"
+    echo "cp vendor/huangdijia/php-coding-standard/.php-cs-fixer.php.stub .php-cs-fixer.php"
+    exit 1
+fi
+
+# Get list of staged PHP files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.php$' | grep -v vendor/)
+
+# If no PHP files are staged, exit
+if [ -z "$STAGED_FILES" ]; then
+    exit 0
+fi
+
+echo "Running PHP CS Fixer on staged files..."
+
+# Run PHP CS Fixer on staged files
+for FILE in $STAGED_FILES; do
+    vendor/bin/php-cs-fixer fix "$FILE" --quiet
+    git add "$FILE"
+done
+
+echo "PHP CS Fixer completed successfully."
+exit 0
