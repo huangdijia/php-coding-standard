@@ -67,7 +67,7 @@ Always reference these instructions first and fallback to search or bash command
 │   ├── settings.json    # PHP formatting configuration
 │   └── cspell.json     # Spell check configuration
 ├── src/
-│   └── Config.php      # Main configuration class (5651 bytes)
+│   └── Config.php      # Main configuration class
 ├── .php-cs-fixer.php   # Active project configuration
 ├── .php-cs-fixer.php.stub # Template for end users
 ├── composer.json       # Package definition and scripts
