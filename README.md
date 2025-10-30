@@ -129,6 +129,9 @@ return (new Config())
 - `setRule(string $rule, mixed $value)`：设置单个规则
 - `addRules(array $rules)`：添加多个规则（与现有规则合并）
 - `setHeaderComment(...)`：配置自动头部注释
+- `enableCache(string $cacheFile = '.php-cs-fixer.cache')`：启用缓存以提高大型项目的性能
+- `disableRiskyRules()`：禁用风险规则以实现更安全的自动修复
+- `forLaravel()`：应用 Laravel 特定的优化配置
 
 ### 头部注释配置
 
@@ -151,6 +154,36 @@ return (new Config())
 )
 ```
 
+### Laravel 项目配置
+
+针对 Laravel 项目使用 `forLaravel()` 方法：
+
+```php
+return (new Config())
+    ->setHeaderComment(/* ... */)
+    ->forLaravel() // 应用 Laravel 特定的优化
+    ->enableCache() // 启用缓存以提高性能
+    ->setFinder(/* ... */);
+```
+
+此方法会自动调整一些规则以更好地适配 Laravel 的编码风格。
+
+### 库/包项目配置
+
+对于库和包开发，使用 `disableRiskyRules()` 方法以实现更安全的修复：
+
+```php
+return (new Config())
+    ->setHeaderComment(/* ... */)
+    ->disableRiskyRules() // 使用更安全的规则
+    ->enableCache()
+    ->addRules([
+        'strict_comparison' => true,
+        'strict_param' => true,
+    ])
+    ->setFinder(/* ... */);
+```
+
 ### 排除目录
 
 自定义要扫描的目录：
@@ -166,6 +199,24 @@ return (new Config())
         ->name('*.php')
         ->notPath('database/migrations')
 )
+```
+
+### 配置示例
+
+项目提供了多个配置示例文件，位于 `examples/` 目录：
+
+- `examples/laravel.php` - Laravel 项目的完整配置示例
+- `examples/library.php` - 库/包项目的配置示例  
+- `examples/pre-commit-hook` - Git 预提交钩子脚本
+
+您可以参考这些示例来配置您的项目：
+
+```bash
+# 查看 Laravel 示例
+cat vendor/huangdijia/php-coding-standard/examples/laravel.php
+
+# 查看库项目示例
+cat vendor/huangdijia/php-coding-standard/examples/library.php
 ```
 
 ## 集成
@@ -200,6 +251,13 @@ jobs:
 vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format=udiff
 ```
 
+或使用项目提供的预提交钩子脚本：
+
+```bash
+cp vendor/huangdijia/php-coding-standard/examples/pre-commit-hook .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
 ## 包含的规则
 
 此配置包含：
@@ -231,6 +289,20 @@ vendor/bin/php-cs-fixer fix --dry-run --diff --diff-format=udiff
 ```bash
 composer cs-fix
 composer json-fix
+```
+
+### 运行测试
+
+本项目使用 PHPUnit 进行测试。在提交更改之前，请运行测试以确保没有破坏现有功能：
+
+```bash
+composer test
+```
+
+您也可以运行静态分析：
+
+```bash
+composer analyze
 ```
 
 ## 安全
