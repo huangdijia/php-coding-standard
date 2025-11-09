@@ -221,9 +221,10 @@ class Config extends \PhpCsFixer\Config
             'lowercase_static_reference' => true,
 
             // PHPUnit rules (disabled by default, can be enabled per project)
+            'php_unit_attributes' => false,
+            'php_unit_internal_class' => ['types' => ['final']],
             'php_unit_strict' => false,
-            'php_unit_test_class_requires_covers' => true,
-            'php_unit_internal_class' => true,
+            'php_unit_test_class_requires_covers' => false,
         ];
     }
 }
